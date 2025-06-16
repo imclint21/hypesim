@@ -1,19 +1,29 @@
 {
-  "webcredentials": {
-    "apps": [ "H9HJ9VZ7CR.business.xxi.hypesim" ]
-  },
-  "applinks": {
-    "apps": [],
-    "details": [
-      {
-        "appID": "H9HJ9VZ7CR.business.xxi.hypesim",
-        "paths": [ "/refer/*" ]
-      }
-    ]
-  },
-  "appclips": {
-    "apps": [
-      "H9HJ9VZ7CR.business.xxi.hypesim.Clip"
-    ]
-  }
+	"webcredentials":{
+		"apps":[
+			"H9HJ9VZ7CR.business.xxi.hypesim"
+		]
+	},
+	"applinks":{
+		"apps":[],
+		"details":[
+			{
+				"appID":"H9HJ9VZ7CR.business.xxi.hypesim",
+				"paths":[
+					"/refer/*"
+				]
+			}
+		]
+	},
+	"appclips":{
+		"apps":[],
+		"details":[
+			{
+				"appID":"H9HJ9VZ7CR.business.xxi.hypesim.Clip",
+				"paths":[
+					"/product/*"
+				]
+			}
+		]
+	}
 }
