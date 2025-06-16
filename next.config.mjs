@@ -18,6 +18,10 @@ const nextConfig = withMdx({
 			{
 				source: "/terms-of-service",
 				destination: "/terms",
+			},
+			{
+				source: "/share",
+				destination: "/",
 			}
 		];
 	},
