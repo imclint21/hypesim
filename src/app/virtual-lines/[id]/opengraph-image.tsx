@@ -10,6 +10,7 @@ function getVirtualLineTitle (virtualLine: any): string {
 
 export default async function Image ({ params }: { params: { id: string } }) {
 	const virtualLine = await getVirtualLine(params.id);
+	const backgroundImage = virtualLine.location?.cover || "https://api.hypesim.io/images/places/default.jpg";
 	return new ImageResponse(
 		(
 			<div
@@ -26,8 +27,8 @@ export default async function Image ({ params }: { params: { id: string } }) {
 					width: "100%",
 					height: "100%",
 					filter: "blur(5px)",
-					backgroundImage: `url(${virtualLine.location.cover})`,
-					backgroundSize: "contain",
+					backgroundImage: `url(${backgroundImage})`,
+					backgroundSize: "cover",
 					backgroundPosition: "center",
 				}}/>
 				<div style={{
