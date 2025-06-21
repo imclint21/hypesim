@@ -1,17 +1,12 @@
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { getVirtualLine } from "@/app/lib";
 
-const BASE_URL = "https://localhost:7001";
-
 type Props = {
-	params: Promise<{ id: string }>
+	params: { id: string }
 }
 
-export async function generateMetadata (
-	{ params }: Props,
-	parent: ResolvingMetadata
-): Promise<Metadata> {
-	const id = (await params).id
+export async function generateMetadata ({ params }: Props): Promise<Metadata> {
+	const id = params.id
 	const virtualLine = await getVirtualLine(id);
 
 	return {
