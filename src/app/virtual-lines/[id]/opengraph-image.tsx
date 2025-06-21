@@ -36,6 +36,11 @@ export default async function Image ({ params }: { params: { id: string } }) {
 				}} tw={"flex bg-white/70 rounded-lg px-10 py-6 text-6xl font-semibold justify-center items-center"}>
 					{getVirtualLineTitle(virtualLine)}
 				</div>
+				<img
+					tw={"absolute w-20 h-20 rounded-xl bottom-12 right-12"}
+					src={`${process.env.NEXT_PUBLIC_HOSTNAME}/images/og.png`}
+					alt={"logo"}
+				/>
 			</div>
 		),
 		{
