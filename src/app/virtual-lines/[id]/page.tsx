@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 
-type Props = {
-	params: { id: string }
-}
+type Params = Promise<{ id: string }>;
+
+// type Props = {
+// 	params: { id: string }
+// }
 
 export const metadata: Metadata = {
 	other: {
@@ -25,6 +27,6 @@ export const metadata: Metadata = {
 // 	}
 // }
 
-export default function Page ({ params }: { params: { id: string } }) {
-	return <h1>Virtual Line {params.id}</h1>
+export default async function Page ({ params }: { params: Params }) {
+	return <h1>Virtual Line {(await params).id}</h1>
 }
