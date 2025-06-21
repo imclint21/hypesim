@@ -17,11 +17,12 @@ export default async function Image ({ params }: { params: { id: string } }) {
 					height: "100%",
 					width: "100%",
 					display: "flex",
-					alignItems: "center",
 					justifyContent: "center",
+					alignItems: "center",
 					backgroundColor: "white",
 				}}>
 				<div style={{
+					position: "absolute",
 					width: "100%",
 					height: "100%",
 					filter: "blur(5px)",
@@ -29,7 +30,9 @@ export default async function Image ({ params }: { params: { id: string } }) {
 					backgroundSize: "contain",
 					backgroundPosition: "center",
 				}}/>
-				<div tw={"flex text-6xl font-semibold mb-6 absolute inset-0 justify-center items-center"}>
+				<div style={{
+					fontWeight: 700
+				}} tw={"flex bg-white/70 rounded-lg px-10 py-6 text-6xl font-semibold justify-center items-center"}>
 					{getVirtualLineTitle(virtualLine)}
 				</div>
 			</div>
