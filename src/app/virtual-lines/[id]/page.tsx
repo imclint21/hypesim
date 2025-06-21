@@ -1,12 +1,30 @@
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
+import { getVirtualLine } from "@/app/lib";
 
-export const metadata: Metadata = {
-	other: {
-		"apple-itunes-app": "app-id=id6746370915, app-clip-bundle-id=business.xxi.hypesim.Clip"
+const BASE_URL = "https://localhost:7001";
+
+type Props = {
+	params: Promise<{ id: string }>
+}
+
+export async function generateMetadata (
+	{ params }: Props,
+	parent: ResolvingMetadata
+): Promise<Metadata> {
+	const id = (await params).id
+	const virtualLine = await getVirtualLine(id);
+
+	return {
+		title: virtualLine.plan.name,
+		// openGraph: {
+		// 	images: [post.location.cover]
+		// },
+		other: {
+			"apple-itunes-app": "app-id=id6746370915, app-clip-bundle-id=business.xxi.hypesim.Clip"
+		}
 	}
-};
+}
 
-// { params }: { params: { code: string } }
-export default function Page () {
-	return <h1>Virtual Line</h1>
+export default function Page ({ params }: { params: { id: string } }) {
+	return <h1>Virtual Line {params.id}</h1>
 }
