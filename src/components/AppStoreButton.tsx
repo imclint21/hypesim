@@ -1,15 +1,17 @@
 "use client";
 
 import React from "react";
-import { toast } from "sonner";
 
 export default function AppStoreButton ({ className }: { className?: string }) {
 	return (
-		<img
-			alt={"AppStore"}
-			className={className}
-			onClick={() => toast.success("Coming soon on the App Store!")}
-			src={"/images/AppStore.svg"}
-		/>
+		<a
+			href={"apps.apple.com/app/hypesim/id6746370915"}
+			target={"_blank"}>
+			<img
+				alt={"AppStore"}
+				className={className}
+				src={"/images/AppStore.svg"}
+			/>
+		</a>
 	);
 }
