@@ -1,10 +1,21 @@
 import { Metadata } from "next";
+import { getVirtualLine } from "@/app/lib";
 
 type Params = Promise<{ id: string }>;
-export const metadata: Metadata = {
-	other: {
-		"apple-itunes-app": "app-id=id6746370915, app-clip-bundle-id=business.xxi.hypesim.Clip",
-		"theme-color": "#FF6214"
+
+type Props = {
+	params: Promise<{ id: string }>
+}
+
+export async function generateMetadata ({ params }: Props): Promise<Metadata> {
+	const id = (await params).id
+	const virtualLine = await getVirtualLine(id);
+	return {
+		title: virtualLine.plan.name,
+		other: {
+			"apple-itunes-app": "app-id=id6746370915, app-clip-bundle-id=business.xxi.hypesim.Clip",
+			"theme-color": "#FF6214"
+		}
 	}
 }
 
